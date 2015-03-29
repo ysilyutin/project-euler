@@ -3,13 +3,15 @@
 
 // Find the sum of all the multiples of 3 or 5 below 1000.
 
-
 function foo(n) {
-	var result = 0;
-
-	for (var i = 1; i < n; i += 1) {
-		if (i % 3 === 0 || i % 5 === 0){
-			temp += i;
-		}
-	} return result;
+  var result = 0;
+  var i = 1;
+  for (i; i < n; i += 1) {
+    if (i % 3 === 0 || i % 5 === 0) {
+      result += i;
+    }
+  }
+  return result;
 }
+
+console.log(foo(1000));
