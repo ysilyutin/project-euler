@@ -2,25 +2,28 @@
 
 // Find the sum of all the primes below two million.
 
-function answer(){
+function isPrimeNumber(numb) {
+  var isPrime = true;
+  var j = 3;
+  for (j; j * j <= numb; j += 2) {
+    if (numb % j === 0) {
+      isPrime = false;
+    }
+  }
+  return isPrime;
+}
+
+
+function answer() {
   var sumOfPrimes = 2;
-  for (var i = 3; i < 2000000; i+=2) {
-    if(isPrimeNumber(i)){
-      sumOfPrimes +=i;
+  var i = 3;
+  for (i; i < 2000000; i += 2) {
+    if (isPrimeNumber(i)) {
+      sumOfPrimes += i;
     }
   }
   return sumOfPrimes;
-
-
-  function isPrimeNumber(numb){
-    var isPrime = true;
-    for (var i = 3; i * i <= numb; i+=2) {
-      if(numb % i === 0){
-        isPrime = false;
-      }
-    }
-    return isPrime;
-  }
 }
+
 
 console.log(answer());
